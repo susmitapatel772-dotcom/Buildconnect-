@@ -859,6 +859,50 @@ body:not(.dashboard-app) .bc-navbar-modern {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
 }
 
+body:not(.dashboard-app) .bc-brand-build {
+    color: #0F2740 !important;
+    font-weight: 800 !important;
+}
+
+body:not(.dashboard-app) .bc-brand-connect {
+    color: #FFAA16 !important;
+    font-weight: 800 !important;
+}
+
+body:not(.dashboard-app) .bc-nav-link {
+    color: #334155 !important;
+    font-weight: 500 !important;
+    opacity: 1 !important;
+}
+
+body:not(.dashboard-app) .bc-nav-link:hover,
+body:not(.dashboard-app) .bc-nav-link.active {
+    color: #FFAA16 !important;
+    opacity: 1 !important;
+}
+
+body:not(.dashboard-app) .profile-name,
+body:not(.dashboard-app) .bc-user-name {
+    color: #0F2740 !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    white-space: nowrap !important;
+}
+
+body:not(.dashboard-app) .profile-role,
+body:not(.dashboard-app) .bc-user-role {
+    color: #64748B !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    white-space: nowrap !important;
+}
+
 body:not(.dashboard-app) .bc-global-search-input {
     background-color: #f1f5f9 !important;
     border: 1px solid #e2e8f0 !important;
