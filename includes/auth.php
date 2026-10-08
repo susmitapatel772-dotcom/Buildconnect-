@@ -134,6 +134,11 @@ function attempt_login($email, $password) {
             $_SESSION['user_role'] = $user['role'];
             $_SESSION['user_email'] = $user['email'];
 
+            // Log activity for successful login
+            if (function_exists('log_activity')) {
+                log_activity($user['id'], 'User Login', "User '{$user['name']}' logged in successfully ({$user['role']})", 'user', $user['id']);
+            }
+
             return [
                 'success' => true,
                 'user' => $user,
@@ -170,6 +175,9 @@ function get_role_redirect_url($role) {
  * Logout User
  */
 function logout_user() {
+    if (isset($_SESSION['user_id']) && function_exists('log_activity')) {
+        log_activity($_SESSION['user_id'], 'User Logout', "User logged out of session", 'user', $_SESSION['user_id']);
+    }
     $_SESSION = array();
     if (ini_get("session.use_cookies")) {
         $params = session_get_cookie_params();

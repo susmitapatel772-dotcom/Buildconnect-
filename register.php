@@ -77,6 +77,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
 
                     set_flash_message('Registration successful! Please log in with your credentials.', 'success');
+                    if (function_exists('log_activity')) {
+                        log_activity($user_id, 'User Registered', "New user registered with role '{$role}'", 'user', $user_id);
+                    }
                     redirect('login.php');
                 } else {
                     $error = 'Registration failed due to a system error. Please try again.';
