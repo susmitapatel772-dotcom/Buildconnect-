@@ -2,24 +2,15 @@
 $user = get_logged_user();
 ?>
 <nav class="bc-navbar bc-navbar-modern d-flex align-items-center justify-content-between">
-    <div class="d-flex align-items-center gap-4 flex-grow-1">
+    <div class="d-flex align-items-center gap-4">
         <a href="<?= BASE_URL ?>/index.php" class="bc-brand-logo flex-shrink-0">
             <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="BuildConnect Logo" class="bc-brand-logo-img">
             <span class="bc-brand-text"><span class="bc-brand-build">Build</span><span class="bc-brand-connect">Connect</span></span>
         </a>
 
-        <!-- Global Search Input with Ctrl+K Keyboard Badge -->
-        <?php if ($user): ?>
-            <div class="position-relative d-none d-md-block flex-grow-1" style="max-width: 380px;">
-                <i class="fa-solid fa-magnifying-glass position-absolute top-50 start-0 translate-middle-y ms-3 text-muted" style="font-size: 0.85rem;"></i>
-                <input type="text" class="form-control bc-global-search-input py-1.5" placeholder="Search users, projects, companies..." aria-label="Global Search">
-                <span class="position-absolute top-50 end-0 translate-middle-y me-2.5 bc-kbd-shortcut">Ctrl + K</span>
-            </div>
-        <?php endif; ?>
-
         <!-- Header Navigation Links -->
         <?php $curr_script = basename($_SERVER['PHP_SELF']); ?>
-        <div class="d-none d-xl-flex align-items-center gap-3 bc-nav-link-group">
+        <div class="d-none d-xl-flex align-items-center gap-3 bc-nav-link-group ms-2">
             <a href="<?= BASE_URL ?>/index.php" class="bc-nav-link <?= ($curr_script === 'index.php' || $curr_script === '') ? 'active' : '' ?>">Home</a>
             <a href="<?= BASE_URL ?>/about.php" class="bc-nav-link <?= $curr_script === 'about.php' ? 'active' : '' ?>">About</a>
             <a href="<?= BASE_URL ?>/services.php" class="bc-nav-link <?= $curr_script === 'services.php' ? 'active' : '' ?>">Services</a>
