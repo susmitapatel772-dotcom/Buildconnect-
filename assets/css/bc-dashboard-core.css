@@ -177,7 +177,7 @@
 
 .dashboard-app .profile-name,
 .dashboard-app .bc-user-name {
-    color: #0F2740 !important;
+    color: #FFFFFF !important;
     font-weight: 700 !important;
     font-size: 0.9rem !important;
     opacity: 1 !important;
@@ -185,7 +185,7 @@
 
 .dashboard-app .profile-role,
 .dashboard-app .bc-user-role {
-    color: #64748B !important;
+    color: #AFC0D5 !important;
     font-size: 0.75rem !important;
     font-weight: 500 !important;
     opacity: 1 !important;

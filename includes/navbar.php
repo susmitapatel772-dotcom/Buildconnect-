@@ -91,8 +91,8 @@ $user = get_logged_user();
             <div class="d-flex align-items-center gap-2 ps-2 border-start border-secondary border-opacity-50">
                 <img src="<?= BASE_URL ?>/assets/images/<?= sanitize($user_avatar) ?>" alt="Avatar" class="rounded-circle border border-2 border-warning" style="width: 36px; height: 36px; object-fit: cover;">
                 <div class="profile-info text-start d-flex flex-column justify-content-center ms-1 me-1" style="line-height: 1.2; min-width: 130px; flex-shrink: 0; display: flex !important; visibility: visible !important; opacity: 1 !important;">
-                    <div class="fw-bold profile-name bc-user-name" style="color: #0F2740 !important; font-weight: 700 !important; font-size: 15px !important; opacity: 1 !important; visibility: visible !important; display: block !important; white-space: nowrap;"><?= sanitize($user['name'] ?? 'User') ?></div>
-                    <div class="extra-small profile-role bc-user-role" style="color: #64748B !important; font-size: 12px !important; font-weight: 500 !important; opacity: 1 !important; visibility: visible !important; display: block !important; white-space: nowrap;"><?= sanitize($user_role_label) ?></div>
+                    <div class="fw-bold profile-name bc-user-name" style="color: #FFFFFF !important; font-weight: 700 !important; font-size: 15px !important; opacity: 1 !important; visibility: visible !important; display: block !important; white-space: nowrap;"><?= sanitize($user['name'] ?? 'User') ?></div>
+                    <div class="extra-small profile-role bc-user-role" style="color: #AFC0D5 !important; font-size: 12px !important; font-weight: 500 !important; opacity: 1 !important; visibility: visible !important; display: block !important; white-space: nowrap;"><?= sanitize($user_role_label) ?></div>
                 </div>
             </div>
 
