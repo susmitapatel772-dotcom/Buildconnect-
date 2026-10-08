@@ -1,0 +1,9 @@
+# BuildConnect Git Ignore
+.env
+config/database.local.php
+*.log
+uploads/temp/*
+scratch/*
+.system_generated/
+.DS_Store
+Thumbs.db
