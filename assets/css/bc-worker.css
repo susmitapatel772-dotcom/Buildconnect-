@@ -1,0 +1,47 @@
+/* ==========================================================================
+   BuildConnect Worker Dashboard Custom UI
+   File: assets/css/bc-worker.css
+   Scope: .worker-app Only
+   ========================================================================== */
+
+.worker-app {
+    background-color: var(--bc-bg);
+}
+
+.worker-app .worker-banner-card {
+    background: linear-gradient(135deg, var(--bc-surface) 0%, var(--bc-surface-2) 100%);
+    border: 1px solid var(--bc-border);
+    border-radius: var(--bc-radius);
+    padding: 1.5rem 1.75rem;
+    box-shadow: var(--bc-shadow);
+}
+
+.worker-app .worker-skill-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 1rem;
+    background: var(--bc-surface);
+    border: 1px solid var(--bc-border);
+    border-radius: var(--bc-radius-sm);
+    color: var(--bc-white);
+    transition: all 0.2s ease;
+}
+
+.worker-app .worker-skill-badge:hover {
+    border-color: var(--bc-orange);
+    background: var(--bc-surface-2);
+}
+
+.worker-app .worker-document-card {
+    background: var(--bc-surface);
+    border: 1px solid var(--bc-border);
+    border-radius: var(--bc-radius);
+    padding: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.worker-app .worker-document-card:hover {
+    border-color: var(--bc-border-light);
+    background: var(--bc-surface-2);
+}

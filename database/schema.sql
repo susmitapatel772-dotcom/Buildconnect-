@@ -114,13 +114,17 @@ CREATE TABLE IF NOT EXISTS worker_skills (
 CREATE TABLE IF NOT EXISTS worker_documents (
     id INT AUTO_INCREMENT PRIMARY KEY,
     worker_id INT NOT NULL,
-    document_type VARCHAR(50) NOT NULL,
+    document_type VARCHAR(100) NOT NULL,
+    document_number VARCHAR(100) DEFAULT NULL,
     file_path VARCHAR(255) NOT NULL,
     file_name VARCHAR(150) NOT NULL,
+    issue_date DATE DEFAULT NULL,
+    expiry_date DATE DEFAULT NULL,
     status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (worker_id) REFERENCES workers(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 
 CREATE TABLE IF NOT EXISTS projects (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -376,6 +380,19 @@ CREATE TABLE IF NOT EXISTS notifications (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     INDEX idx_notif_user_read (user_id, is_read),
     INDEX idx_notif_created (created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS push_subscriptions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    endpoint TEXT NOT NULL,
+    p256dh_key TEXT DEFAULT NULL,
+    auth_key TEXT DEFAULT NULL,
+    user_agent VARCHAR(255) DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    INDEX idx_push_user (user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS messages (

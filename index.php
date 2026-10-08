@@ -330,9 +330,10 @@ $user = get_logged_user();
         <div class="row g-4 mb-4 text-start">
             <div class="col-lg-4">
                 <a href="<?= BASE_URL ?>/index.php" class="bc-brand-logo mb-3">
-                    <i class="fa-solid fa-helmet-safety"></i>
+                    <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="BuildConnect Logo" class="bc-brand-logo-img">
                     <span>Build<span class="text-warning">Connect</span></span>
                 </a>
+
                 <p class="text-slate-400 small mt-2" style="max-width: 320px; line-height: 1.6;">
                     Smart construction workforce and project management platform connecting contractors, workers, and clients.
                 </p>

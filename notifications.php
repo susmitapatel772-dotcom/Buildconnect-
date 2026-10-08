@@ -125,6 +125,42 @@ $unread_count = get_unread_notification_count($user['id']);
             </div>
         <?php endif; ?>
 
+        <!-- Localhost Web Push Control Panel Card -->
+        <div class="bc-card p-3.5 mb-4 border border-warning border-opacity-25" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9));">
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="p-2.5 rounded-3 bg-warning bg-opacity-10 border border-warning border-opacity-20 text-warning">
+                        <i class="fa-solid fa-tower-cell fs-4"></i>
+                    </div>
+                    <div>
+                        <div class="d-flex align-items-center gap-2 mb-1">
+                            <h5 class="fw-bold text-white mb-0 fs-6">Localhost Web Push Notifications</h5>
+                            <span id="bc-push-status-badge" class="badge bg-warning text-dark py-1 px-2.5 rounded-pill extra-small">
+                                <i class="fa-solid fa-spinner fa-spin me-1"></i> Checking...
+                            </span>
+                        </div>
+                        <p id="bc-push-status-desc" class="text-muted extra-small mb-0">
+                            Receive instant desktop browser popups for job updates, QR attendance, and contract sign-offs on localhost.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                    <button id="bc-enable-push-btn" type="button" class="btn btn-amber btn-sm fw-bold shadow-sm" onclick="BuildConnectPush.requestPermission()">
+                        <i class="fa-solid fa-bell me-1"></i> Enable Localhost Push
+                    </button>
+                    <button type="button" class="btn btn-outline-warning btn-sm fw-semibold" onclick="BuildConnectPush.sendTestPush()">
+                        <i class="fa-solid fa-paper-plane me-1"></i> Send Test Push
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mt-2.5 pt-2 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center text-muted extra-small">
+                <span><i class="fa-solid fa-laptop-code me-1 text-warning"></i> Push Session Endpoint ID: <code id="bc-push-token-display" class="text-info bg-dark px-2 py-0.5 rounded">localhost-push-active</code></span>
+                <span><i class="fa-solid fa-shield-halved me-1 text-success"></i> W3C Web Push & Service Worker v1.0</span>
+            </div>
+        </div>
+
         <!-- Filters Bar -->
         <div class="bc-card p-3 mb-4">
             <div class="d-flex flex-wrap gap-2 align-items-center justify-content-between">

@@ -1,21 +1,30 @@
 <?php
 $user = get_logged_user();
 ?>
-<nav class="bc-navbar d-flex align-items-center justify-content-between">
-    <div class="d-flex align-items-center gap-4">
-        <a href="<?= BASE_URL ?>/index.php" class="bc-brand-logo">
-            <i class="fa-solid fa-helmet-safety"></i>
-            <span>Build<span class="text-warning">Connect</span></span>
+<nav class="bc-navbar bc-navbar-modern d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center gap-4 flex-grow-1">
+        <a href="<?= BASE_URL ?>/index.php" class="bc-brand-logo flex-shrink-0">
+            <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="BuildConnect Logo" class="bc-brand-logo-img">
+            <span class="bc-brand-text"><span class="bc-brand-build">Build</span><span class="bc-brand-connect">Connect</span></span>
         </a>
 
-        <!-- Public Navigation Links -->
+        <!-- Global Search Input with Ctrl+K Keyboard Badge -->
+        <?php if ($user): ?>
+            <div class="position-relative d-none d-md-block flex-grow-1" style="max-width: 380px;">
+                <i class="fa-solid fa-magnifying-glass position-absolute top-50 start-0 translate-middle-y ms-3 text-muted" style="font-size: 0.85rem;"></i>
+                <input type="text" class="form-control bc-global-search-input py-1.5" placeholder="Search users, projects, companies..." aria-label="Global Search">
+                <span class="position-absolute top-50 end-0 translate-middle-y me-2.5 bc-kbd-shortcut">Ctrl + K</span>
+            </div>
+        <?php endif; ?>
+
+        <!-- Header Navigation Links -->
         <?php $curr_script = basename($_SERVER['PHP_SELF']); ?>
-        <div class="d-none d-lg-flex align-items-center gap-3">
-            <a href="<?= BASE_URL ?>/index.php" class="text-decoration-none small fw-medium <?= $curr_script === 'index.php' ? 'text-warning fw-bold border-bottom border-2 border-warning pb-1' : 'text-light opacity-75' ?>">Home</a>
-            <a href="<?= BASE_URL ?>/about.php" class="text-decoration-none small fw-medium <?= $curr_script === 'about.php' ? 'text-warning fw-bold border-bottom border-2 border-warning pb-1' : 'text-light opacity-75' ?>">About</a>
-            <a href="<?= BASE_URL ?>/services.php" class="text-decoration-none small fw-medium <?= $curr_script === 'services.php' ? 'text-warning fw-bold border-bottom border-2 border-warning pb-1' : 'text-light opacity-75' ?>">Services</a>
-            <a href="<?= BASE_URL ?>/how-it-works.php" class="text-decoration-none small fw-medium <?= $curr_script === 'how-it-works.php' ? 'text-warning fw-bold border-bottom border-2 border-warning pb-1' : 'text-light opacity-75' ?>">How It Works</a>
-            <a href="<?= BASE_URL ?>/index.php#contact" class="text-light text-decoration-none small fw-medium opacity-75">Contact</a>
+        <div class="d-none d-xl-flex align-items-center gap-3 bc-nav-link-group">
+            <a href="<?= BASE_URL ?>/index.php" class="bc-nav-link <?= ($curr_script === 'index.php' || $curr_script === '') ? 'active' : '' ?>">Home</a>
+            <a href="<?= BASE_URL ?>/about.php" class="bc-nav-link <?= $curr_script === 'about.php' ? 'active' : '' ?>">About</a>
+            <a href="<?= BASE_URL ?>/services.php" class="bc-nav-link <?= $curr_script === 'services.php' ? 'active' : '' ?>">Services</a>
+            <a href="<?= BASE_URL ?>/how-it-works.php" class="bc-nav-link <?= $curr_script === 'how-it-works.php' ? 'active' : '' ?>">How It Works</a>
+            <a href="<?= BASE_URL ?>/index.php#contact" class="bc-nav-link <?= $curr_script === 'contact.php' ? 'active' : '' ?>">Contact</a>
         </div>
     </div>
 
@@ -23,11 +32,23 @@ $user = get_logged_user();
         <?php if ($user): 
             $unread_count = get_unread_notification_count($user['id']);
             $nav_notifications = get_user_notifications($user['id'], 5);
+            $user_role_label = ucfirst($user['role']);
+            if ($user['role'] === 'admin') $user_role_label = 'Executive Admin';
+            elseif ($user['role'] === 'client') $user_role_label = 'Client';
+            elseif ($user['role'] === 'worker') $user_role_label = 'Worker';
+            elseif ($user['role'] === 'contractor') $user_role_label = 'Contractor';
+
+            $user_avatar = (!empty($user['avatar']) && file_exists(__DIR__ . '/../assets/images/' . $user['avatar'])) ? $user['avatar'] : 'logo.png';
         ?>
+            <!-- Theme Toggle Icon -->
+            <button class="btn btn-sm btn-link text-slate-400 p-1 text-decoration-none d-none d-sm-inline-block" type="button" title="Toggle Light/Dark Theme">
+                <i class="fa-regular fa-sun fs-5" style="color: #9FB6CF;"></i>
+            </button>
+
             <!-- Notification Dropdown -->
             <div class="dropdown">
-                <button class="btn btn-outline-secondary btn-sm position-relative text-light" type="button" id="notifDropdown" data-bs-toggle="dropdown" aria-expanded="false" title="Notifications">
-                    <i class="fa-solid fa-bell text-warning"></i>
+                <button class="btn btn-outline-secondary btn-sm position-relative text-light border-0" type="button" id="notifDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bell text-warning fs-5" style="color: #FFAA16 !important;"></i>
                     <?php if ($unread_count > 0): ?>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.65rem;">
                             <?= $unread_count ?>
@@ -66,11 +87,16 @@ $user = get_logged_user();
                 </div>
             </div>
 
-            <span class="badge bg-warning text-dark text-uppercase font-monospace px-2 py-1">
-                <?= sanitize($user['role']) ?>
-            </span>
-            <span class="text-light small fw-semibold d-none d-sm-inline"><?= sanitize($user['name']) ?></span>
-            <a href="<?= BASE_URL ?>/logout.php" class="btn btn-outline-danger btn-sm">Sign Out</a>
+            <!-- User Profile Avatar Pill (Name first, Role underneath) -->
+            <div class="d-flex align-items-center gap-2 ps-2 border-start border-secondary border-opacity-50">
+                <img src="<?= BASE_URL ?>/assets/images/<?= sanitize($user_avatar) ?>" alt="Avatar" class="rounded-circle border border-2 border-warning" style="width: 36px; height: 36px; object-fit: cover;">
+                <div class="profile-info text-start d-flex flex-column justify-content-center ms-1 me-1" style="line-height: 1.2; min-width: 130px; flex-shrink: 0; display: flex !important; visibility: visible !important; opacity: 1 !important;">
+                    <div class="fw-bold profile-name bc-user-name" style="color: #0F2740 !important; font-weight: 700 !important; font-size: 15px !important; opacity: 1 !important; visibility: visible !important; display: block !important; white-space: nowrap;"><?= sanitize($user['name'] ?? 'User') ?></div>
+                    <div class="extra-small profile-role bc-user-role" style="color: #64748B !important; font-size: 12px !important; font-weight: 500 !important; opacity: 1 !important; visibility: visible !important; display: block !important; white-space: nowrap;"><?= sanitize($user_role_label) ?></div>
+                </div>
+            </div>
+
+            <a href="<?= BASE_URL ?>/logout.php" class="btn btn-outline-danger btn-sm ms-1">Sign Out</a>
         <?php else: 
             $curr_page = basename($_SERVER['PHP_SELF']);
         ?>
@@ -84,6 +110,7 @@ $user = get_logged_user();
         </button>
     </div>
 </nav>
+
 
 <!-- Mobile Navigation Drawer -->
 <div id="bc-navbar-menu" class="d-none bg-dark border-bottom border-secondary p-3 d-lg-none">

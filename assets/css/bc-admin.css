@@ -1,0 +1,260 @@
+/* ==========================================================================
+   BuildConnect Admin Dashboard Custom UI
+   File: assets/css/bc-admin.css
+   Scope: .admin-app Only
+   ========================================================================== */
+
+.admin-app {
+    background-color: var(--bc-bg);
+}
+
+.admin-app .admin-banner-card {
+    background: linear-gradient(135deg, var(--bc-surface) 0%, var(--bc-surface-2) 100%);
+    border: 1px solid var(--bc-border);
+    border-radius: var(--bc-radius);
+    padding: 1.5rem 1.75rem;
+    box-shadow: var(--bc-shadow);
+}
+
+.admin-app .admin-kpi-card {
+    background: var(--bc-surface) !important;
+    border: 1px solid var(--bc-border) !important;
+    border-radius: var(--bc-radius) !important;
+    padding: 1.25rem !important;
+    transition: all 0.25s ease;
+}
+
+.admin-app .admin-kpi-card:hover {
+    background: var(--bc-surface-2) !important;
+    border-color: var(--bc-border-light) !important;
+    transform: translateY(-2px);
+}
+
+.admin-app .admin-kpi-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 1.15rem;
+}
+
+.admin-app .admin-kpi-icon.blue {
+    background: rgba(22, 132, 248, 0.18);
+    color: var(--bc-blue);
+    border: 1px solid rgba(22, 132, 248, 0.35);
+}
+
+.admin-app .admin-kpi-icon.orange {
+    background: rgba(255, 170, 22, 0.18);
+    color: var(--bc-orange);
+    border: 1px solid rgba(255, 170, 22, 0.35);
+}
+
+.admin-app .admin-kpi-icon.green {
+    background: rgba(24, 200, 137, 0.18);
+    color: var(--bc-success);
+    border: 1px solid rgba(24, 200, 137, 0.35);
+}
+
+.admin-app .admin-kpi-icon.red {
+    background: rgba(240, 84, 112, 0.18);
+    color: var(--bc-danger);
+    border: 1px solid rgba(240, 84, 112, 0.35);
+}
+
+/* ==========================================================================
+   Admin Header, Branding & Navigation High-Contrast Styling
+   ========================================================================== */
+
+/* Navbar Background */
+.admin-app .bc-navbar,
+.admin-app .bc-navbar-modern {
+    background-color: var(--bc-header) !important;
+    border-bottom: 1px solid var(--bc-border) !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Header Branding */
+.admin-app .bc-brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800 !important;
+    font-size: 1.4rem !important;
+    text-decoration: none !important;
+    flex-shrink: 0;
+}
+
+.admin-app .bc-brand-text {
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
+    display: inline-flex !important;
+    align-items: center;
+}
+
+.admin-app .bc-brand-build {
+    color: #F5F8FF !important;
+    font-weight: 800 !important;
+}
+
+.admin-app .bc-brand-connect {
+    color: #FFAA16 !important;
+    font-weight: 800 !important;
+}
+
+/* Header Navigation Links */
+.admin-app .bc-nav-link {
+    color: #CBD5E1 !important;
+    font-weight: 500 !important;
+    font-size: 0.885rem !important;
+    text-decoration: none !important;
+    padding: 0.25rem 0.4rem !important;
+    transition: all 0.2s ease !important;
+    opacity: 1 !important;
+}
+
+.admin-app .bc-nav-link:hover {
+    color: #FFAA16 !important;
+    opacity: 1 !important;
+}
+
+.admin-app .bc-nav-link.active {
+    color: #FFAA16 !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid #FFAA16 !important;
+    opacity: 1 !important;
+}
+
+/* Greeting Title & Subtitle */
+.admin-app .bc-greeting-title,
+.admin-app .bc-header-banner h1 {
+    color: #F5F8FF !important;
+    font-weight: 800 !important;
+}
+
+.admin-app .bc-greeting-name {
+    color: #F5F8FF !important;
+    font-weight: 800 !important;
+}
+
+.admin-app .bc-greeting-subtitle,
+.admin-app .bc-header-banner p {
+    color: #AFC0D5 !important;
+    opacity: 1 !important;
+}
+
+/* Date Range Control */
+.admin-app .bc-date-range-control {
+    background-color: #0B2743 !important;
+    border: 1px solid #1A405F !important;
+    color: #F5F8FF !important;
+}
+
+/* Export Report Button */
+.admin-app #bc-export-report-btn {
+    background: linear-gradient(135deg, #FFAA16, #FF9900) !important;
+    color: #071525 !important;
+    font-weight: 700 !important;
+    border: none !important;
+}
+
+.admin-app #bc-export-report-btn i {
+    color: #071525 !important;
+}
+
+/* ==========================================================================
+   Admin Section Titles, Quick Actions & Chart High-Contrast Rules
+   ========================================================================== */
+
+.admin-app .bc-card-title {
+    color: #F5F8FF !important;
+    font-weight: 700 !important;
+    font-size: 1.15rem !important;
+}
+
+.admin-app .bc-view-all-link {
+    color: #FFAA16 !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+}
+
+.admin-app .bc-view-all-link:hover {
+    color: #FFC247 !important;
+}
+
+.admin-app .bc-chart-number {
+    color: #F5F8FF !important;
+    font-weight: 800 !important;
+    font-size: 2.1rem !important;
+}
+
+.admin-app .bc-chart-label {
+    color: #AFC0D5 !important;
+    font-weight: 500 !important;
+}
+
+.admin-app .bc-quick-action-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0.85rem;
+    border-radius: 12px;
+    background: rgba(14, 49, 81, 0.4);
+    border: 1px solid var(--bc-border);
+    margin-bottom: 0.75rem;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+.admin-app .bc-quick-action-item:hover {
+    background: var(--bc-surface-2);
+    border-color: var(--bc-orange);
+    transform: translateX(3px);
+}
+
+.admin-app .bc-metric-value {
+    color: #F5F8FF !important;
+    font-weight: 800 !important;
+    font-size: 2rem !important;
+    line-height: 1.2;
+}
+
+.admin-app .bc-metric-title {
+    color: #AFC0D5 !important;
+    font-weight: 700;
+}
+
+.admin-app .profile-info {
+    min-width: 140px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex-shrink: 0 !important;
+}
+
+.admin-app .profile-name,
+.admin-app .bc-user-name {
+    color: #0F2740 !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    white-space: nowrap !important;
+}
+
+.admin-app .profile-role,
+.admin-app .bc-user-role {
+    color: #64748B !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    white-space: nowrap !important;
+}

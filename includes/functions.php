@@ -42,6 +42,13 @@ function e($string) {
 }
 
 /**
+ * Format currency amount in Indian Rupees (₹)
+ */
+function format_inr($amount, $decimals = 0) {
+    return format_currency($amount, '₹', $decimals);
+}
+
+/**
  * Redirect to specified path
  */
 function redirect($path) {
@@ -651,6 +658,34 @@ function validate_coordinates($lat, $lng) {
 function get_google_maps_api_key() {
     return defined('GOOGLE_MAPS_API_KEY') ? GOOGLE_MAPS_API_KEY : '';
 }
+
+/**
+ * Safely mask sensitive identity document numbers (e.g. Aadhaar, PAN, Licence, Passport)
+ */
+function mask_identity_number($number) {
+    $raw = trim((string)$number);
+    if ($raw === '') {
+        return 'N/A';
+    }
+    $clean = preg_replace('/[^a-zA-Z0-9]/', '', $raw);
+    $len = strlen($clean);
+    
+    if ($len <= 4) {
+        return str_repeat('X', $len);
+    }
+    
+    $last_four = substr($clean, -4);
+    
+    if ($len === 12) {
+        return 'XXXX-XXXX-' . $last_four;
+    }
+    if ($len === 10) {
+        return 'XXXXXX' . $last_four;
+    }
+    
+    return str_repeat('X', max(0, $len - 4)) . $last_four;
+}
+
 
 
 

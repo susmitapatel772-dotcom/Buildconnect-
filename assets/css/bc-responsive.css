@@ -1,0 +1,39 @@
+/* ==========================================================================
+   BuildConnect Dashboard Responsive Stylesheet
+   File: assets/css/bc-responsive.css
+   Scope: .dashboard-app Only
+   ========================================================================== */
+
+@media (max-width: 991.98px) {
+    .dashboard-app .dashboard-layout {
+        flex-direction: column;
+    }
+
+    .dashboard-app .dashboard-sidebar {
+        width: 100% !important;
+        position: relative !important;
+        top: 0 !important;
+        height: auto !important;
+        max-height: none !important;
+        border-right: none !important;
+        border-bottom: 1px solid var(--bc-border) !important;
+    }
+
+    .dashboard-app .dashboard-content {
+        padding: 1.25rem 1rem;
+    }
+
+    .dashboard-app .dashboard-header {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .dashboard-app .dashboard-content {
+        padding: 1rem 0.75rem;
+    }
+
+    .dashboard-app .dashboard-search-box {
+        display: none;
+    }
+}

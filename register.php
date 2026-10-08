@@ -95,8 +95,9 @@ require_once __DIR__ . '/includes/navbar.php';
     <div class="bc-login-card bc-register-card">
         <div class="text-center mb-4">
             <div class="bc-login-header-icon">
-                <i class="fa-solid fa-user-plus"></i>
+                <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="BuildConnect Logo">
             </div>
+
             <h1 class="h3 text-white fw-bold brand-font mb-1">Create BuildConnect Account</h1>
             <p class="text-slate-400 small mb-0">Join the construction network and build a better tomorrow.</p>
         </div>

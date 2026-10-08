@@ -2,26 +2,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap');
 
 :root {
-    --bc-primary: #FFAA16;          /* Accent Orange */
-    --bc-primary-hover: #e0920a;    /* Deep Orange Hover */
-    --bc-secondary: #FFC247;        /* Accent Yellow */
-    --bc-bg: #031A2F;               /* Primary Deep Navy Background */
-    --bc-bg-secondary: #06223B;     /* Secondary Dark Blue Background */
-    --bc-surface: #082640;          /* Card Background */
-    --bc-surface-glass: rgba(8, 38, 64, 0.92);
-    --bc-sidebar-bg: #06223B;       /* Sidebar Background */
-    --bc-text: #FFFFFF;             /* Primary Text */
-    --bc-text-muted: #B9C7D8;       /* Secondary Text Soft Blue-Gray */
-    --bc-border: #183D59;           /* Subtle Blue Border */
-    --bc-border-subtle: rgba(24, 61, 89, 0.6);
-    --bc-success: #10b981;          /* Emerald Success */
-    --bc-warning: #FFAA16;          /* Orange Warning */
-    --bc-danger: #ef4444;           /* Rose Danger */
-    --bc-info: #38bdf8;             /* Cyan Info */
-    --bc-radius: 14px;
+    --bc-bg: #03182D;
+    --bc-bg-secondary: #061F38;
+    --bc-sidebar: #071D35;
+    --bc-sidebar-bg: #071D35;
+    --bc-card: #092642;
+    --bc-card-hover: #0D3152;
+    --bc-surface: #092642;
+    --bc-surface-glass: rgba(9, 38, 66, 0.94);
+    --bc-border: #163B5B;
+    --bc-border-subtle: rgba(22, 59, 91, 0.6);
+
+    --bc-blue-primary: #0B82F6;
+    --bc-primary: #FFAA16;          /* BuildConnect Orange Accent */
+    --bc-primary-hover: #e0920a;
+    --bc-orange: #FFAA16;
+    --bc-orange-light: #FFC247;
+
+    --bc-text: #F5F8FF;
+    --bc-text-muted: #AFC0D5;
+    --bc-text-secondary: #AFC0D5;
+
+    --bc-success: #16C784;
+    --bc-warning: #F5B83D;
+    --bc-danger: #F05270;
+    --bc-info: #2DB9E8;
+
+    --bc-radius: 12px;
     --bc-radius-sm: 8px;
-    --bc-radius-lg: 18px;
-    --bc-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 170, 22, 0.05);
+    --bc-radius-lg: 16px;
+    --bc-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
 }
 
 /* Custom Scrollbar */
@@ -30,10 +40,10 @@
     height: 8px;
 }
 ::-webkit-scrollbar-track {
-    background: #031A2F;
+    background: #03182D;
 }
 ::-webkit-scrollbar-thumb {
-    background: #183D59;
+    background: #163B5B;
     border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -58,14 +68,14 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     color: var(--bc-text-muted) !important;
 }
 
-/* Base Layout Grid with Subtle Ambient Glows */
+/* Industrial Base Layout Grid with Subtle Gold Ambient Glows */
 .bc-layout {
     display: flex;
     min-height: calc(100vh - 65px);
     width: 100%;
     position: relative;
-    background: radial-gradient(circle at 80% 15%, rgba(255, 170, 22, 0.06) 0%, transparent 40%),
-                radial-gradient(circle at 10% 75%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
+    background: radial-gradient(circle at 85% 12%, rgba(245, 158, 11, 0.07) 0%, transparent 45%),
+                radial-gradient(circle at 8% 80%, rgba(56, 189, 248, 0.04) 0%, transparent 50%),
                 var(--bc-bg);
 }
 
@@ -76,26 +86,26 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     background: transparent;
 }
 
-/* Premium Surface & Glassmorphic Cards */
+/* Premium Industrial Charcoal & Gold Surface Cards */
 .bc-card, .card {
-    background: linear-gradient(145deg, rgba(8, 38, 64, 0.95) 0%, rgba(6, 34, 59, 0.90) 100%) !important;
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.96) 0%, rgba(17, 24, 39, 0.93) 100%) !important;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--bc-border) !important;
     border-radius: var(--bc-radius-lg) !important;
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
     color: var(--bc-text);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bc-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(255, 170, 22, 0.45) !important;
-    box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.65), 0 0 25px rgba(255, 170, 22, 0.15);
+    border-color: rgba(245, 158, 11, 0.5) !important;
+    box-shadow: 0 18px 45px -12px rgba(0, 0, 0, 0.75), 0 0 25px rgba(245, 158, 11, 0.2);
 }
 
 .card-header {
-    background: linear-gradient(180deg, rgba(12, 48, 80, 0.7) 0%, rgba(6, 34, 59, 0.8) 100%) !important;
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.9) 0%, rgba(17, 24, 39, 0.9) 100%) !important;
     border-bottom: 1px solid var(--bc-border) !important;
     color: var(--bc-text) !important;
     padding: 1.1rem 1.35rem;
@@ -103,14 +113,14 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 }
 
 .card-footer {
-    background-color: rgba(6, 34, 59, 0.8) !important;
+    background-color: rgba(17, 24, 39, 0.9) !important;
     border-top: 1px solid var(--bc-border) !important;
     color: var(--bc-text-muted) !important;
 }
 
 /* Navigation Bar */
 .bc-navbar {
-    background: rgba(6, 34, 59, 0.94) !important;
+    background: rgba(17, 24, 39, 0.96) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--bc-border) !important;
@@ -118,28 +128,128 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     position: sticky;
     top: 0;
     z-index: 1040;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
 }
 
 .bc-brand-logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     font-weight: 800;
     font-size: 1.4rem;
-    color: #ffffff;
+    color: #0F2740;
     text-decoration: none;
 }
 
-.bc-brand-logo i {
-    color: var(--bc-primary);
-    font-size: 1.45rem;
-    background: linear-gradient(135deg, rgba(255, 170, 22, 0.25) 0%, rgba(255, 170, 22, 0.08) 100%);
-    padding: 9px 10px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 170, 22, 0.35);
-    box-shadow: 0 0 15px rgba(255, 170, 22, 0.2);
+.bc-brand-text {
+    font-weight: 800;
+    font-size: 1.35rem;
+    display: inline-flex;
+    align-items: center;
 }
+
+.bc-brand-build {
+    color: #0F2740;
+    font-weight: 800;
+}
+
+.bc-brand-connect {
+    color: #FFAA16;
+    font-weight: 800;
+}
+
+.bc-nav-link {
+    color: #334155;
+    font-weight: 500;
+    font-size: 0.885rem;
+    text-decoration: none;
+    padding: 0.25rem 0.4rem;
+    transition: all 0.2s ease;
+    opacity: 1;
+}
+
+.bc-nav-link:hover {
+    color: #FFAA16;
+    opacity: 1;
+}
+
+.bc-nav-link.active {
+    color: #FFAA16;
+    font-weight: 700;
+    border-bottom: 2px solid #FFAA16;
+    opacity: 1;
+}
+
+/* Public Home Header Login & Register Buttons */
+.btn-amber {
+    background-color: #FFAA16 !important;
+    background: linear-gradient(135deg, #FFAA16, #FF9900) !important;
+    color: #071525 !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.45rem 1rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-amber:hover {
+    background: linear-gradient(135deg, #FF9900, #E68500) !important;
+    color: #000000 !important;
+    transform: translateY(-1px);
+}
+
+.btn-outline-amber {
+    background-color: transparent !important;
+    border: 1px solid #FFAA16 !important;
+    color: #0F2740 !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    padding: 0.45rem 1rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-outline-amber:hover {
+    background-color: rgba(255, 170, 22, 0.12) !important;
+    color: #FFAA16 !important;
+    border-color: #FFAA16 !important;
+}
+
+.bc-brand-logo-img {
+    height: 42px;
+    width: 42px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3), 0 0 10px rgba(255, 170, 22, 0.2);
+    transition: all 0.3s ease;
+}
+
+.bc-brand-logo:hover .bc-brand-logo-img {
+    transform: scale(1.08) rotate(2deg);
+    border-color: rgba(255, 170, 22, 0.6);
+    box-shadow: 0 0 20px rgba(255, 170, 22, 0.5);
+}
+
+.bc-login-header-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1rem auto;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 170, 22, 0.4);
+    box-shadow: 0 0 25px rgba(255, 170, 22, 0.3), 0 0 15px rgba(56, 189, 248, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #031A2F;
+}
+
+.bc-login-header-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 /* Sidebar Navigation */
 .bc-sidebar {
@@ -152,7 +262,36 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Worker, Admin & Client Sidebar Fixed Positioning & Independent Scrolling */
+@media (min-width: 992px) {
+    .bc-sidebar-worker,
+    .bc-sidebar-admin,
+    .bc-sidebar-client {
+        position: sticky !important;
+        top: 65px !important;
+        height: calc(100vh - 65px) !important;
+        max-height: calc(100vh - 65px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        flex-shrink: 0 !important;
+        overscroll-behavior: contain;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .bc-sidebar-worker,
+    .bc-sidebar-admin,
+    .bc-sidebar-client {
+        width: 100% !important;
+        height: auto !important;
+        position: relative !important;
+        top: 0 !important;
+    }
+}
+
+
 .bc-sidebar-nav {
+
     list-style: none;
     padding: 0;
     margin: 0;
@@ -277,20 +416,20 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 
 /* Buttons */
 .btn-amber {
-    background: linear-gradient(135deg, #FFAA16 0%, #e0920a 100%) !important;
-    color: #031A2F !important;
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%) !important;
+    color: #0F172A !important;
     font-weight: 700 !important;
     border: none !important;
     padding: 0.65rem 1.45rem;
     border-radius: var(--bc-radius-sm);
-    box-shadow: 0 4px 15px rgba(255, 170, 22, 0.3);
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
     transition: all 0.25s ease;
 }
 
 .btn-amber:hover {
-    background: linear-gradient(135deg, #FFC247 0%, #FFAA16 100%) !important;
+    background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%) !important;
     color: #000000 !important;
-    box-shadow: 0 6px 20px rgba(255, 170, 22, 0.5);
+    box-shadow: 0 6px 22px rgba(245, 158, 11, 0.55);
     transform: translateY(-1px);
 }
 
@@ -306,25 +445,25 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 
 .btn-outline-amber:hover {
     background: var(--bc-primary) !important;
-    color: #031A2F !important;
-    box-shadow: 0 0 15px rgba(255, 170, 22, 0.3);
+    color: #0F172A !important;
+    box-shadow: 0 0 18px rgba(245, 158, 11, 0.35);
     transform: translateY(-1px);
 }
 
 .btn-amber-glow {
-    background: linear-gradient(135deg, #FFAA16 0%, #d97706 100%) !important;
-    color: #031A2F !important;
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%) !important;
+    color: #0F172A !important;
     font-weight: 800 !important;
     border: none !important;
     border-radius: var(--bc-radius-sm);
-    box-shadow: 0 4px 20px rgba(255, 170, 22, 0.45);
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.45);
     transition: all 0.25s ease;
 }
 
 .btn-amber-glow:hover {
-    background: linear-gradient(135deg, #FFC247 0%, #FFAA16 100%) !important;
+    background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%) !important;
     color: #000000 !important;
-    box-shadow: 0 8px 25px rgba(255, 170, 22, 0.6);
+    box-shadow: 0 8px 28px rgba(245, 158, 11, 0.65);
     transform: translateY(-2px);
 }
 
@@ -339,14 +478,14 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 }
 
 .form-control:focus, .form-select:focus {
-    background-color: #092c4b !important;
+    background-color: #1E293B !important;
     border-color: var(--bc-primary) !important;
     color: var(--bc-text) !important;
-    box-shadow: 0 0 0 0.25rem rgba(255, 170, 22, 0.22) !important;
+    box-shadow: 0 0 0 0.25rem rgba(245, 158, 11, 0.25) !important;
 }
 
 .form-control::placeholder {
-    color: #6c89a3 !important;
+    color: #64748B !important;
 }
 
 .form-label {
@@ -356,11 +495,11 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 
 /* Modals */
 .modal-content {
-    background: linear-gradient(145deg, rgba(8, 38, 64, 0.98) 0%, rgba(6, 34, 59, 0.95) 100%) !important;
-    border: 1px solid rgba(255, 170, 22, 0.25) !important;
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.98) 0%, rgba(17, 24, 39, 0.96) 100%) !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
     color: var(--bc-text) !important;
     border-radius: var(--bc-radius-lg) !important;
-    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85);
 }
 
 .modal-header {
@@ -386,7 +525,7 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 .table-custom th, .table th {
     border-bottom: 1px solid var(--bc-border) !important;
     color: var(--bc-text-muted) !important;
-    background: linear-gradient(180deg, rgba(12, 48, 80, 0.8) 0%, rgba(6, 34, 59, 0.9) 100%) !important;
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.9) 0%, rgba(17, 24, 39, 0.95) 100%) !important;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.75rem;
@@ -402,7 +541,7 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 }
 
 .table-custom tbody tr:hover, .table tbody tr:hover {
-    background-color: rgba(255, 170, 22, 0.06) !important;
+    background-color: rgba(245, 158, 11, 0.08) !important;
 }
 
 /* Badges */
@@ -477,7 +616,7 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 /* Redesigned BuildConnect Auth & Login Styles */
 .bc-login-wrapper {
     min-height: calc(100vh - 65px);
-    background: linear-gradient(135deg, rgba(3, 26, 47, 0.97) 0%, rgba(6, 34, 59, 0.92) 100%),
+    background: linear-gradient(135deg, rgba(11, 15, 23, 0.98) 0%, rgba(17, 24, 39, 0.95) 100%),
                 url('../images/construction-bg.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -489,19 +628,19 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 .bc-login-card {
     width: 100%;
     max-width: 490px;
-    background: rgba(8, 38, 64, 0.92);
+    background: rgba(30, 41, 59, 0.94);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 170, 22, 0.3);
+    border: 1px solid rgba(245, 158, 11, 0.35);
     border-radius: 24px;
-    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.75), 0 0 35px rgba(255, 170, 22, 0.12);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.85), 0 0 35px rgba(245, 158, 11, 0.15);
     padding: 2.75rem 2.5rem;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .bc-login-card:hover {
-    border-color: rgba(255, 170, 22, 0.5);
-    box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.85), 0 0 45px rgba(255, 170, 22, 0.2);
+    border-color: rgba(245, 158, 11, 0.6);
+    box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.9), 0 0 45px rgba(245, 158, 11, 0.25);
 }
 
 .bc-login-header-icon {
@@ -510,13 +649,13 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(255, 170, 22, 0.25) 0%, rgba(255, 170, 22, 0.08) 100%);
-    border: 1px solid rgba(255, 170, 22, 0.4);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(245, 158, 11, 0.08) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.45);
     border-radius: 50%;
     color: var(--bc-primary);
     font-size: 1.85rem;
     margin-bottom: 1.25rem;
-    box-shadow: 0 0 25px rgba(255, 170, 22, 0.25);
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.3);
 }
 
 .bc-input-group-text {
@@ -543,13 +682,13 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 }
 
 .bc-input::placeholder {
-    color: #6c89a3 !important;
+    color: #64748B !important;
 }
 
 .bc-input:focus {
-    background-color: #092c4b !important;
+    background-color: #1E293B !important;
     border-color: var(--bc-primary) !important;
-    box-shadow: 0 0 0 3px rgba(255, 170, 22, 0.22) !important;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25) !important;
 }
 
 .bc-input-btn-eye {
@@ -694,4 +833,326 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 
 .text-purple {
     color: #c084fc !important;
+}
+
+/* ==========================================================================
+   Modern Executive Dashboard UI/UX System (Matches Reference Mockup)
+   ========================================================================== */
+
+.bc-dashboard-theme {
+    background-color: #f8fafc !important;
+    color: #1e293b !important;
+}
+
+.bc-dashboard-theme h1,
+.bc-dashboard-theme h2,
+.bc-dashboard-theme h3,
+.bc-dashboard-theme h4,
+.bc-dashboard-theme h5,
+.bc-dashboard-theme h6 {
+    color: #0f172a !important;
+}
+
+body:not(.dashboard-app) .bc-navbar-modern {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+body:not(.dashboard-app) .bc-global-search-input {
+    background-color: #f1f5f9 !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #0f172a !important;
+    border-radius: 10px !important;
+    padding-left: 2.2rem !important;
+    font-size: 0.875rem !important;
+}
+body:not(.dashboard-app) .bc-global-search-input:focus {
+    background-color: #ffffff !important;
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+}
+
+.bc-kbd-shortcut {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #e2e8f0;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.bc-sidebar {
+    background-color: #0f172a !important;
+    border-right: 1px solid #1e293b !important;
+}
+
+.bc-sidebar-tagline {
+    font-size: 0.725rem;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.bc-nav-header {
+    color: #64748b !important;
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+}
+
+.bc-nav-item a {
+    color: #94a3b8 !important;
+    font-weight: 500;
+    border-radius: 10px;
+}
+.bc-nav-item a:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+}
+
+.bc-nav-item.active a {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    border-left: none !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+}
+
+.bc-sidebar-weather-widget {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin-top: auto;
+}
+
+/* BuildConnect Dark Navy SaaS Dashboard Components */
+.bc-header-banner {
+    background: linear-gradient(135deg, #092642 0%, #061A31 100%);
+    border: 1px solid #163B5B;
+    border-radius: 18px;
+    padding: 1.5rem 1.75rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+.bc-header-banner-quote {
+    font-family: 'Caveat', cursive, sans-serif;
+    font-size: 1.5rem;
+    color: #FFAA16;
+    transform: rotate(-3deg);
+    position: absolute;
+    right: 220px;
+    top: 15px;
+    opacity: 0.9;
+}
+
+/* Metric Icon Badges */
+.bc-metric-icon-orange, .bc-metric-badge-orange, .bc-metric-icon-amber {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(245, 158, 11, 0.1) 100%) !important;
+    border: 1px solid rgba(245, 158, 11, 0.45) !important;
+    color: #F59E0B !important;
+}
+
+.bc-metric-icon-green, .bc-metric-badge-green {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.25) 0%, rgba(16, 185, 129, 0.1) 100%) !important;
+    border: 1px solid rgba(16, 185, 129, 0.45) !important;
+    color: #10B981 !important;
+}
+
+.bc-metric-icon-blue, .bc-metric-badge-blue {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.25) 0%, rgba(56, 189, 248, 0.1) 100%) !important;
+    border: 1px solid rgba(56, 189, 248, 0.45) !important;
+    color: #38BDF8 !important;
+}
+
+.bc-metric-icon-purple, .bc-metric-badge-purple {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.25) 0%, rgba(168, 85, 247, 0.1) 100%) !important;
+    border: 1px solid rgba(168, 85, 247, 0.45) !important;
+    color: #C084FC !important;
+}
+
+.bc-metric-icon-red, .bc-metric-badge-red {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.25) 0%, rgba(239, 68, 68, 0.1) 100%) !important;
+    border: 1px solid rgba(239, 68, 68, 0.45) !important;
+    color: #EF4444 !important;
+}
+
+.bc-surface-card, .bc-metric-card {
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.96) 0%, rgba(17, 24, 39, 0.93) 100%) !important;
+    border: 1px solid var(--bc-border) !important;
+    border-radius: 16px !important;
+    padding: 1.35rem 1.25rem !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    color: #F8FAFC !important;
+}
+
+.bc-surface-card:hover, .bc-metric-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(245, 158, 11, 0.5) !important;
+    box-shadow: 0 18px 45px -10px rgba(0, 0, 0, 0.75), 0 0 25px rgba(245, 158, 11, 0.2);
+}
+
+.bc-quick-action-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--bc-border);
+    background: rgba(17, 24, 39, 0.85);
+    color: #F8FAFC !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease;
+    margin-bottom: 8px;
+}
+
+.bc-quick-action-item:hover {
+    background: rgba(30, 41, 59, 0.95);
+    border-color: rgba(245, 158, 11, 0.45);
+    transform: translateX(4px);
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.18);
+}
+
+.bc-banner-explore {
+    background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+    border-radius: 16px;
+    padding: 20px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(217, 119, 6, 0.3);
+}
+.bc-banner-explore::after {
+    content: '';
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+}
+
+/* Collapsible Sidebar Styles */
+.bc-sidebar-collapsed {
+    width: 76px !important;
+}
+
+.bc-sidebar-collapsed .bc-nav-header,
+.bc-sidebar-collapsed .bc-sidebar-tagline,
+.bc-sidebar-collapsed .bc-sidebar-weather-widget,
+.bc-sidebar-collapsed .bc-nav-item span,
+.bc-sidebar-collapsed .bc-brand-logo span {
+    display: none !important;
+}
+
+.bc-sidebar-collapsed .bc-nav-item a {
+    justify-content: center !important;
+    padding: 0.75rem 0 !important;
+}
+
+.bc-sidebar-collapse-btn {
+    background: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+.bc-sidebar-collapse-btn:hover {
+    color: #0f172a;
+    background: #f1f5f9;
+}
+
+/* Command Palette Modal (Ctrl + K) */
+.bc-command-palette-modal .modal-content {
+    background: #1E293B !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85) !important;
+    color: #F8FAFC !important;
+}
+
+/* Universal Dashboard Theme Enforcements */
+.bc-dashboard-theme .text-dark {
+    color: #F8FAFC !important;
+}
+.bc-dashboard-theme .text-slate-700,
+.bc-dashboard-theme .text-slate-800,
+.bc-dashboard-theme .text-slate-900 {
+    color: #E2E8F0 !important;
+}
+.bc-dashboard-theme .text-slate-500,
+.bc-dashboard-theme .text-slate-600 {
+    color: #94A3B8 !important;
+}
+.bc-dashboard-theme .bg-white {
+    background-color: #1E293B !important;
+    color: #F8FAFC !important;
+    border-color: #334155 !important;
+}
+.bc-dashboard-theme .border-slate-200 {
+    border-color: #334155 !important;
+}
+.bc-dashboard-theme .table-light th,
+.bc-dashboard-theme .table-light td {
+    background: #111827 !important;
+    color: #F8FAFC !important;
+    border-color: #334155 !important;
+}
+
+/* Typography Hierarchy Enforcement */
+.bc-dashboard-theme body,
+.bc-dashboard-theme {
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.bc-page-title {
+    font-size: 1.85rem !important; /* 28-32px */
+    font-weight: 800 !important;
+    letter-spacing: -0.02em;
+}
+
+.bc-section-title {
+    font-size: 1.15rem !important; /* 18-20px */
+    font-weight: 700 !important;
+}
+
+.bc-card-metric {
+    font-size: 1.85rem !important; /* 28-32px */
+    font-weight: 800 !important;
+}
+
+/* Industrial Construction Gold Theme Specialty Utilities */
+.bc-construction-stripe {
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(245, 158, 11, 0.15),
+        rgba(245, 158, 11, 0.15) 12px,
+        rgba(17, 24, 39, 0.3) 12px,
+        rgba(17, 24, 39, 0.3) 24px
+    );
+    border-top: 2px solid rgba(245, 158, 11, 0.4);
+    border-bottom: 2px solid rgba(245, 158, 11, 0.4);
+}
+
+.bc-badge-gold {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(245, 158, 11, 0.10) 100%) !important;
+    border: 1px solid rgba(245, 158, 11, 0.5) !important;
+    color: #FBBF24 !important;
+    font-weight: 700;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
+}
+
+.bc-steel-border {
+    border: 1px solid #334155 !important;
+}
+
+.bc-gold-glow-card {
+    border: 1px solid rgba(245, 158, 11, 0.35) !important;
+    box-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(245, 158, 11, 0.18) !important;
 }

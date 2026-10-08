@@ -1,0 +1,78 @@
+/* ==========================================================================
+   BuildConnect Client Dashboard Custom UI
+   File: assets/css/bc-client.css
+   Scope: .client-app Only
+   ========================================================================== */
+
+.client-app {
+    background-color: var(--bc-bg);
+}
+
+.client-app .client-banner-card {
+    background: linear-gradient(135deg, var(--bc-surface) 0%, var(--bc-surface-2) 100%);
+    border: 1px solid var(--bc-border);
+    border-radius: var(--bc-radius);
+    padding: 1.5rem 1.75rem;
+    box-shadow: var(--bc-shadow);
+}
+
+.client-app .client-project-card {
+    background: var(--bc-surface);
+    border: 1px solid var(--bc-border);
+    border-radius: var(--bc-radius);
+    padding: 1.35rem;
+    transition: all 0.25s ease;
+    box-shadow: var(--bc-shadow);
+}
+
+.client-app .client-project-card:hover {
+    border-color: var(--bc-orange);
+    background: var(--bc-surface-2);
+    transform: translateY(-2px);
+}
+
+.client-app .client-budget-summary {
+    background: var(--bc-surface-2);
+    border: 1px solid var(--bc-border);
+    border-radius: var(--bc-radius);
+    padding: 1.25rem;
+}
+
+/* High Contrast Heading & Payment Amount Utilities */
+.client-app .bc-page-title {
+    color: var(--bc-white) !important;
+    font-weight: 800 !important;
+    font-size: 1.85rem !important;
+    letter-spacing: -0.02em;
+}
+
+.client-app .bc-page-title i.fa-indian-rupee-sign {
+    color: var(--bc-orange) !important;
+}
+
+.client-app .bc-kpi-amount {
+    font-size: 1.85rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    display: block;
+}
+
+.client-app .bc-kpi-amount-white {
+    color: #FFFFFF !important;
+}
+
+.client-app .bc-kpi-amount-completed {
+    color: var(--bc-success) !important;
+}
+
+.client-app .bc-kpi-amount-pending {
+    color: var(--bc-orange) !important;
+}
+
+.client-app .bc-table-amount {
+    color: var(--bc-success) !important;
+    font-weight: 800 !important;
+    font-size: 1.05rem !important;
+    font-family: var(--font-monospace, monospace);
+}

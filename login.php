@@ -45,8 +45,9 @@ require_once __DIR__ . '/includes/navbar.php';
     <div class="bc-login-card">
         <div class="text-center mb-4">
             <div class="bc-login-header-icon">
-                <i class="fa-solid fa-helmet-safety"></i>
+                <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="BuildConnect Logo">
             </div>
+
             <h1 class="h3 text-white fw-bold brand-font mb-1">Welcome Back to BuildConnect</h1>
             <p class="text-slate-400 small mb-0">Sign in to continue managing your construction network.</p>
         </div>

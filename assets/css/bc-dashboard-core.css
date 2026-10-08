@@ -1,0 +1,488 @@
+/* ==========================================================================
+   BuildConnect Dashboard Core Design System
+   File: assets/css/bc-dashboard-core.css
+   Scope: Shared Dashboard Foundation for Admin, Worker, and Client
+   ========================================================================== */
+
+:root {
+    --bc-bg: #071525;
+    --bc-bg-deep: #04111F;
+    --bc-sidebar: #081B30;
+    --bc-header: #081A2E;
+    --bc-surface: #0B2743;
+    --bc-surface-2: #0E3151;
+
+    --bc-border: #1A405F;
+    --bc-border-light: #24516F;
+
+    --bc-orange: #FFAA16;
+    --bc-orange-hover: #FFC247;
+
+    --bc-blue: #1684F8;
+    --bc-blue-hover: #2994FF;
+
+    --bc-success: #18C889;
+    --bc-warning: #F5B942;
+    --bc-danger: #F05470;
+    --bc-info: #28B8E8;
+
+    --bc-white: #F7FAFF;
+    --bc-text: #EAF1FA;
+    --bc-muted: #9DB0C8;
+
+    --bc-radius: 14px;
+    --bc-radius-sm: 10px;
+    --bc-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Base Reset inside Dashboard Apps */
+.dashboard-app {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bc-bg) !important;
+    color: var(--bc-text) !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-app h1, .dashboard-app h2, .dashboard-app h3, 
+.dashboard-app h4, .dashboard-app h5, .dashboard-app h6 {
+    color: var(--bc-white);
+    font-family: 'Outfit', 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.dashboard-app .text-muted {
+    color: var(--bc-muted) !important;
+}
+
+/* Master Layout Grid */
+.dashboard-app .dashboard-layout {
+    display: flex;
+    min-height: calc(100vh - 68px);
+    width: 100%;
+    position: relative;
+    background: var(--bc-bg);
+}
+
+.dashboard-app .dashboard-content {
+    flex: 1;
+    min-width: 0;
+    padding: 2rem 2.25rem;
+    background: transparent;
+}
+
+/* Shared Master Dashboard Header (Admin, Worker & Client) */
+.dashboard-app .bc-navbar,
+.dashboard-app .bc-navbar-modern,
+.dashboard-app .dashboard-header {
+    background-color: #061A31 !important;
+    border-bottom: 1px solid #163B5B !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4) !important;
+    padding: 0.85rem 1.75rem !important;
+    min-height: 68px !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1040 !important;
+}
+
+.dashboard-app .bc-brand-logo,
+.dashboard-app .dashboard-brand-logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
+    text-decoration: none !important;
+    flex-shrink: 0 !important;
+}
+
+.dashboard-app .bc-brand-text {
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.dashboard-app .bc-brand-build {
+    color: #F5F8FF !important;
+    font-weight: 800 !important;
+}
+
+.dashboard-app .bc-brand-connect {
+    color: #FFAA16 !important;
+    font-weight: 800 !important;
+}
+
+.dashboard-app .bc-nav-link {
+    color: #DCE7F5 !important;
+    font-weight: 500 !important;
+    font-size: 0.885rem !important;
+    text-decoration: none !important;
+    padding: 0.25rem 0.4rem !important;
+    transition: all 0.2s ease !important;
+    opacity: 1 !important;
+}
+
+.dashboard-app .bc-nav-link:hover {
+    color: #FFAA16 !important;
+    opacity: 1 !important;
+}
+
+.dashboard-app .bc-nav-link.active {
+    color: #FFAA16 !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid #FFAA16 !important;
+    opacity: 1 !important;
+}
+
+.dashboard-app .bc-global-search-input {
+    background-color: #0A2744 !important;
+    border: 1px solid #1B4668 !important;
+    color: #F5F8FF !important;
+    border-radius: 10px !important;
+    padding-left: 2.4rem !important;
+    font-size: 0.875rem !important;
+}
+
+.dashboard-app .bc-global-search-input::placeholder {
+    color: #91A7BF !important;
+}
+
+.dashboard-app .bc-kbd-shortcut {
+    font-size: 0.7rem !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    background: #E8EEF5 !important;
+    color: #334155 !important;
+    font-weight: 600 !important;
+    border: 1px solid #CBD5E1 !important;
+}
+
+.dashboard-app .btn-outline-danger {
+    background: transparent !important;
+    border: 1px solid #F05270 !important;
+    color: #F05270 !important;
+    font-weight: 600 !important;
+    border-radius: var(--bc-radius-sm) !important;
+    padding: 0.35rem 0.85rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.dashboard-app .btn-outline-danger:hover {
+    background: rgba(240, 82, 112, 0.12) !important;
+    color: #FF7187 !important;
+    border-color: #F05270 !important;
+}
+
+.dashboard-app .profile-name,
+.dashboard-app .bc-user-name {
+    color: #0F2740 !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    opacity: 1 !important;
+}
+
+.dashboard-app .profile-role,
+.dashboard-app .bc-user-role {
+    color: #64748B !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    opacity: 1 !important;
+}
+
+/* Search Box */
+.dashboard-app .dashboard-search-box {
+    position: relative;
+    max-width: 420px;
+    width: 100%;
+}
+
+.dashboard-app .dashboard-search-input {
+    background: var(--bc-surface) !important;
+    border: 1px solid var(--bc-border) !important;
+    border-radius: 10px !important;
+    color: var(--bc-white) !important;
+    padding: 0.6rem 2.5rem 0.6rem 2.4rem;
+    font-size: 0.88rem;
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-app .dashboard-search-input:focus {
+    border-color: var(--bc-blue) !important;
+    box-shadow: 0 0 0 3px rgba(22, 132, 248, 0.15) !important;
+    outline: none;
+}
+
+.dashboard-app .dashboard-search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--bc-muted);
+    font-size: 0.9rem;
+}
+
+/* Sidebar Styling */
+.dashboard-app .dashboard-sidebar {
+    width: 270px;
+    background-color: var(--bc-sidebar) !important;
+    border-right: 1px solid var(--bc-border) !important;
+    padding: 1.5rem 1rem;
+    flex-shrink: 0;
+    position: sticky !important;
+    top: 68px !important;
+    height: calc(100vh - 68px) !important;
+    max-height: calc(100vh - 68px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: contain;
+}
+
+.dashboard-app .dashboard-sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-app .dashboard-nav-section-title {
+    color: var(--bc-muted) !important;
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 0.45rem !important;
+    padding-left: 0.75rem !important;
+    display: block;
+    opacity: 0.85;
+}
+
+.dashboard-app .dashboard-nav-item {
+    margin-bottom: 0.35rem;
+}
+
+.dashboard-app .dashboard-nav-item a {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.7rem 0.9rem;
+    color: var(--bc-muted);
+    font-size: 0.885rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.dashboard-app .dashboard-nav-item a:hover {
+    background: rgba(22, 132, 248, 0.12);
+    color: var(--bc-white);
+    transform: translateX(3px);
+}
+
+.dashboard-app .dashboard-nav-item.active a {
+    background: var(--bc-surface-2);
+    color: var(--bc-white);
+    font-weight: 700;
+    border-left: 4px solid var(--bc-orange);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Scoped Card System */
+.dashboard-app .card,
+.dashboard-app .bc-card,
+.dashboard-app .bc-surface-card {
+    background: var(--bc-surface) !important;
+    border: 1px solid var(--bc-border) !important;
+    border-radius: var(--bc-radius) !important;
+    padding: 20px !important;
+    box-shadow: var(--bc-shadow);
+    color: var(--bc-text) !important;
+    transition: all 0.25s ease;
+}
+
+.dashboard-app .card.interactive:hover,
+.dashboard-app .bc-card.interactive:hover {
+    background: var(--bc-surface-2) !important;
+    border-color: var(--bc-border-light) !important;
+}
+
+/* Scoped Button System */
+.dashboard-app .btn-primary,
+.dashboard-app .btn-orange {
+    background: var(--bc-orange) !important;
+    color: #07182B !important;
+    font-weight: 700 !important;
+    border: none !important;
+    height: 42px;
+    border-radius: var(--bc-radius-sm) !important;
+    padding: 0 1.35rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(255, 170, 22, 0.25);
+}
+
+.dashboard-app .btn-primary:hover,
+.dashboard-app .btn-orange:hover {
+    background: var(--bc-orange-hover) !important;
+    color: #000000 !important;
+    box-shadow: 0 6px 20px rgba(255, 170, 22, 0.4);
+    transform: translateY(-1px);
+}
+
+.dashboard-app .btn-secondary,
+.dashboard-app .btn-outline-blue {
+    background: transparent !important;
+    border: 1px solid var(--bc-blue) !important;
+    color: var(--bc-white) !important;
+    font-weight: 600 !important;
+    height: 42px;
+    border-radius: var(--bc-radius-sm) !important;
+    padding: 0 1.35rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.dashboard-app .btn-secondary:hover,
+.dashboard-app .btn-outline-blue:hover {
+    background: var(--bc-blue) !important;
+    color: var(--bc-white) !important;
+    box-shadow: 0 4px 15px rgba(22, 132, 248, 0.35);
+}
+
+.dashboard-app .btn-danger {
+    background: var(--bc-danger) !important;
+    color: var(--bc-white) !important;
+    font-weight: 600 !important;
+    border: none !important;
+    height: 42px;
+    border-radius: var(--bc-radius-sm) !important;
+    padding: 0 1.35rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.dashboard-app .btn-danger:hover {
+    background: #e03f5c !important;
+    box-shadow: 0 4px 15px rgba(240, 84, 112, 0.4);
+}
+
+/* Scoped Form Controls */
+.dashboard-app .form-control,
+.dashboard-app .form-select {
+    background-color: #081F37 !important;
+    border: 1px solid #1A405F !important;
+    color: var(--bc-white) !important;
+    border-radius: 10px !important;
+    padding: 0.65rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.dashboard-app .form-control:focus,
+.dashboard-app .form-select:focus {
+    background-color: var(--bc-surface) !important;
+    border-color: var(--bc-blue) !important;
+    color: var(--bc-white) !important;
+    box-shadow: 0 0 0 3px rgba(22, 132, 248, 0.12) !important;
+    outline: none;
+}
+
+.dashboard-app .form-label {
+    color: var(--bc-muted) !important;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+/* Scoped Tables */
+.dashboard-app .table {
+    color: var(--bc-text) !important;
+    --bs-table-color: var(--bc-text);
+    --bs-table-bg: transparent;
+    --bs-table-border-color: var(--bc-border);
+}
+
+.dashboard-app .table th {
+    background: var(--bc-bg-deep) !important;
+    border-bottom: 1px solid var(--bc-border) !important;
+    color: var(--bc-muted) !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.725rem;
+    letter-spacing: 0.05em;
+    padding: 0.9rem 0.85rem;
+}
+
+.dashboard-app .table td {
+    padding: 0.9rem 0.85rem;
+    border-bottom: 1px solid var(--bc-border) !important;
+    vertical-align: middle;
+    color: var(--bc-text) !important;
+}
+
+.dashboard-app .table tbody tr:hover {
+    background-color: rgba(22, 132, 248, 0.06) !important;
+}
+
+/* Pill Status Badges */
+.badge-pill {
+    padding: 0.4em 0.8em;
+    font-weight: 700;
+    font-size: 0.725rem;
+    border-radius: 50rem;
+    letter-spacing: 0.03em;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.badge-verified, .badge-completed {
+    background: rgba(24, 200, 137, 0.18) !important;
+    color: var(--bc-success) !important;
+    border: 1px solid rgba(24, 200, 137, 0.4);
+}
+
+.badge-pending {
+    background: rgba(245, 185, 66, 0.18) !important;
+    color: var(--bc-warning) !important;
+    border: 1px solid rgba(245, 185, 66, 0.4);
+}
+
+.badge-rejected, .badge-suspended {
+    background: rgba(240, 84, 112, 0.18) !important;
+    color: var(--bc-danger) !important;
+    border: 1px solid rgba(240, 84, 112, 0.4);
+}
+
+.badge-active {
+    background: rgba(22, 132, 248, 0.18) !important;
+    color: var(--bc-blue) !important;
+    border: 1px solid rgba(22, 132, 248, 0.4);
+}
+
+/* Modals */
+.dashboard-app .modal-content {
+    background: var(--bc-surface) !important;
+    border: 1px solid var(--bc-border) !important;
+    color: var(--bc-white) !important;
+    border-radius: var(--bc-radius) !important;
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85);
+}
+
+.dashboard-app .modal-header {
+    background: var(--bc-header) !important;
+    border-bottom: 1px solid var(--bc-border) !important;
+}
+
+.dashboard-app .modal-footer {
+    background: var(--bc-header) !important;
+    border-top: 1px solid var(--bc-border) !important;
+}
