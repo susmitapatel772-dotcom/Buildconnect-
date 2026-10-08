@@ -6,7 +6,23 @@ document.addEventListener('DOMContentLoaded', () => {
     initTooltips();
     initMapIfPresent();
     initSignaturePadIfPresent();
+    initNavbarToggle();
 });
+
+// Navbar Mobile Toggle Helper
+function initNavbarToggle() {
+    const toggleBtns = document.querySelectorAll('[data-bc-toggle="navbar"]');
+    const mobileMenu = document.getElementById('bc-navbar-menu');
+
+    if (!mobileMenu) return;
+
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            mobileMenu.classList.toggle('d-none');
+        });
+    });
+}
 
 // Toast Notification Helper
 function showToast(message, type = 'info') {
@@ -69,7 +85,7 @@ function initSignaturePadIfPresent() {
     canvas.width = canvas.offsetWidth;
     canvas.height = 180;
 
-    ctx.strokeStyle = '#f59e0b';
+    ctx.strokeStyle = '#FFAA16';
     ctx.lineWidth = 3;
     ctx.lineCap = 'round';
 

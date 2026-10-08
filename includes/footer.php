@@ -14,8 +14,10 @@
     <!-- BuildConnect Maps JS -->
     <script src="<?= BASE_URL ?>/assets/js/maps.js"></script>
 
+    <!-- BuildConnect Core JS -->
+    <script src="<?= BASE_URL ?>/assets/js/main.js"></script>
+
     <!-- BuildConnect App JS -->
     <script src="<?= BASE_URL ?>/assets/js/app.js"></script>
 </body>
 </html>
-
